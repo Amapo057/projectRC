@@ -15,11 +15,12 @@ void setup() {
 
   radio.begin();
   // 보낼 주소
-  radio.openWritingPipe(adress);
+  radio.openReadingPipe(0, adress);
   // 파워 설정
   radio.setPALevel(RF24_PA_MIN);
   //수신모드
   radio.startListening();
+  radio.setChannel(100);
 }
 
 void loop() {
@@ -33,5 +34,5 @@ void loop() {
     Serial.print("  |  drs : ");
     Serial.println(data.drsButton);
   }
-
+  delay(5);
 }
