@@ -26,6 +26,7 @@ void setup() {
   radio.setPALevel(RF24_PA_MIN);
   //송신모드
   radio.stopListening();
+  radio.setChannel(100);
 }
 
 void loop() {
@@ -47,5 +48,5 @@ void loop() {
   Serial.print(data.drsButton);
   Serial.println("next");
 
-  delay(1000);
+  delay(5);
 }
